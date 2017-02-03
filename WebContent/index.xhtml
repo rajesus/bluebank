@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:pt="http://xmlns.jcp.org/jsf/passthrough"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:jsf="http://xmlns.jcp.org/jsf"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+	<meta charset="UTF-8" />
+	<h:outputStylesheet library="css" name="style.css" />
+	<h:outputStylesheet library="css" name="bootstrap.min.css" />
+	<h:outputStylesheet library="css" name="bootstrap-theme.css" />
+	<h:outputStylesheet library="css"
+		name="bootstrap-theme.min.css" />
+	<h:outputStylesheet library="bootstrap/css" name="bootstrap.css" />
+
+</h:head>
+
+<h:body>
+     <h:form>
+	<fieldset>
+
+		<div class="formularioCorpo">
+		 <div class="panel panel-info">
+			<legend>Transferência entre contas</legend>
+
+			<div class="col-sm-5">
+				<label for="lbl_numeroAgenciaOrigem" class="control-label">Agência/Origem</label>
+				<input class="form-control" name="txt_numeroAgenciaOrigem" jsf:value="Conta.numeroAgenciaOrigem" />
+			</div>
+
+				<div class="col-sm-5">
+				<label for="lbl_numeroContaOrigem" class="control-label">CC/Origem</label>
+				<input class="form-control" name="txt_numeroContaOrigem" jsf:value="Conta.numeroContaOrigem" />
+			</div>
+			
+			<div class="col-sm-5">
+				<label for="lbl_numeroAgenciaDestino" class="control-label">Agência/Destino</label>
+				<input class="form-control" name="txt_numeroAgenciaDestino"  jsf:value="Conta.numeroAgenciaDestino"/>
+			</div>
+
+			<div class="col-sm-5">
+				<label for="lbl_numeroContaDestino" class="control-label">CC/Destino</label>
+				<input class="form-control" name="txt_numeroContaDestino"  jsf:value="Conta.numeroContaDestino"/>
+			</div>
+			
+			<div class="col-sm-5">
+				<label for="lbl_valor" class="control-label">Valor</label>
+				<input class="form-control" name="txt_valor" jsf:value="Conta.valor" />
+			</div>
+			
+             <div class="col-sm-5">
+			       <h:button class="btn btn-success btn-sm" value="Confirmar" update="@form" jsf:action="#{contaController.confirmarOperacao}"/>
+			</div>
+           </div>
+
+			</div>
+
+		</fieldset>
+   </h:form>
+</h:body>
+
+</html>
