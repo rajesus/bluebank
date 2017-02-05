@@ -41,8 +41,6 @@ public class Conta {
 		this.valor = valor;
 	}
 
-   public void confirmarOperacao(){
-	   
-   }
+
 
 }

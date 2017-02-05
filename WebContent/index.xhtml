@@ -29,33 +29,46 @@
           <div class="row">
 			<div class="col-sm-5">
 				<label for="lbl_numeroAgenciaOrigem" class="control-label">Agência/Origem</label>
-				<input class="form-control" name="txt_numeroAgenciaOrigem" jsf:value="contaController.conta.numeroAgenciaOrigem"/>
+				<input class="form-control" id="txt_numeroAgenciaOrigem" jsf:value="#{contaController.conta.numeroAgenciaOrigem}" required="tue" requiredMessage="Campo Obrigatório">
+				<f:validateLength minnimum="3" maximum="6"/>
+				</input>
+			    <p:message for="txt_numeroAgenciaOrigem" styleClass="RED" />
 			</div>
 
 				<div class="col-sm-5">
 				<label for="lbl_numeroContaOrigem" class="control-label">CC/Origem</label>
-				<input class="form-control" name="txt_numeroContaOrigem" jsf:value="contaController.conta.numeroContaOrigem"/>
+				<input class="form-control" id="txt_numeroContaOrigem" jsf:value="#{contaController.conta.numeroContaOrigem}"  required="tue"  requiredMessage="Campo Obrigatório">
+				<f:validateLength minnimum="3" maximum="20"/>
+				</input>
+			    <p:message for="txt_numeroContaOrigem"  styleClass="RED" />
 			</div>
 			
 		</div>
 		<div class="row">
 			<div class="col-sm-5">
 				<label for="lbl_numeroAgenciaDestino" class="control-label">Agência/Destino</label>
-				<input class="form-control" name="txt_numeroAgenciaDestino"  jsf:value="contaController.conta.numeroAgenciaDestino"/>
+				<input class="form-control" id="txt_numeroAgenciaDestino"  jsf:value="#{contaController.conta.numeroAgenciaDestino}"  required="tue" requiredMessage="Campo Obrigatório">
+				<f:validateLength minnimum="3" maximum="20"/>
+				</input>
+			    <p:message for="txt_numeroAgenciaDestino"  styleClass="RED" />
 			</div>
 
 			<div class="col-sm-5">
 				<label for="lbl_numeroContaDestino" class="control-label">CC/Destino</label>
-				<input class="form-control" name="txt_numeroContaDestino"  jsf:value="contaController.conta.numeroContaDestino"/>
+				<input class="form-control" id="txt_numeroContaDestino"  jsf:value="#{contaController.conta.numeroContaDestino}" required="tue"  requiredMessage="Campo Obrigatório">
+				<f:validateLength minnimum="3" maximum="20"/>
+				</input>
+			    <p:message for="txt_numeroContaDestino"  styleClass="RED" />
 			</div>
 			
 			<div class="col-sm-5">
 				<label for="lbl_valor" class="control-label">Valor</label>
-				<input class="form-control" name="txt_valor" jsf:value="contaController.conta.valor"/>
+				<input class="form-control" id="txt_valor" jsf:value="#{contaController.conta.valor}" requiredMessage="Campo Obrigatório"/>
+			    <p:message for="txt_valor"  styleClass="RED" />
 			</div>
 		 </div>
              <div class="col-sm-5">
-			       <h:button class="btn btn-success btn-sm" value="Confirmar" update="@form" action="#{contaController.conta.confirmarOperacao}" />
+			       <h:button class="btn btn-success btn-sm" value="Confirmar" update="@form" action="#{contaController.confirmarOperacao}" />
 		     </div>	
         </div>
 
